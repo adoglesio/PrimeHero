@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220321 17:18:54.426" rpa="false" schemaversion="2">
+<suite id="s1" name="Cenarios Movermouse" source="C:\PrimeHero\Refac\refactoring-test03\tests\features\cenarios_movermouse.robot">
+<test id="s1-t1" name="Caso de Teste 03: Listar Produtos">
+<kw name="Abrir o navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220321 17:18:55.596" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220321 17:18:55.595" endtime="20220321 17:18:57.468"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220321 17:18:57.469" endtime="20220321 17:18:57.613"/>
+</kw>
+<status status="PASS" starttime="20220321 17:18:55.595" endtime="20220321 17:18:57.613"/>
+</kw>
+<kw name="Acessar a página home do site" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220321 17:18:57.616" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20220321 17:18:57.616" endtime="20220321 17:19:08.858"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<arg>10S</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220321 17:19:08.866" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20220321 17:19:08.859" endtime="20220321 17:19:08.866"/>
+</kw>
+<status status="PASS" starttime="20220321 17:18:57.614" endtime="20220321 17:19:08.867"/>
+</kw>
+<kw name="Passar o mouse por cima da categoria &quot;WOMEN&quot; no menu principal superior de categorias" library="keywords" sourcename="Passar o mouse por cima da categoria &quot;${PRODUTO}&quot; no menu principal superior de categorias">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/a</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220321 17:19:08.869" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20220321 17:19:08.869" endtime="20220321 17:19:09.176"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220321 17:19:09.176" endtime="20220321 17:19:09.214"/>
+</kw>
+<status status="PASS" starttime="20220321 17:19:08.868" endtime="20220321 17:19:09.214"/>
+</kw>
+<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="keywords" sourcename="Clicar na sub categoria &quot;${NOME_PRODUTO}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=search_query_top</arg>
+<arg>${NOME_PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220321 17:19:09.218" level="INFO">Typing text 'Summer Dresses' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20220321 17:19:09.217" endtime="20220321 17:19:09.375"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220321 17:19:09.376" level="INFO">Clicking element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20220321 17:19:09.375" endtime="20220321 17:19:12.489"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220321 17:19:12.782" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220321 17:19:12.490" endtime="20220321 17:19:12.782"/>
+</kw>
+<status status="PASS" starttime="20220321 17:19:09.216" endtime="20220321 17:19:12.782"/>
+</kw>
+<kw name="Conferir se os produtos da sub-categoria &quot;Summer Dresses&quot; foram mostrados na página" library="keywords" sourcename="Conferir se os produtos da sub-categoria &quot;${NOME_PRODUTO}&quot; foram mostrados na página">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220321 17:19:12.785" endtime="20220321 17:19:12.821"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Summer Dresses - My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220321 17:19:12.824" level="INFO">Page title is 'Summer Dresses - My Store'.</msg>
+<status status="PASS" starttime="20220321 17:19:12.821" endtime="20220321 17:19:12.824"/>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/ul/li[1]/div/div[1]/div/a[1]/img</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220321 17:19:12.839" level="INFO">Current page contains image 'xpath=//*[@id="center_column"]/ul/li[1]/div/div[1]/div/a[1]/img'.</msg>
+<status status="PASS" starttime="20220321 17:19:12.825" endtime="20220321 17:19:12.839"/>
+</kw>
+<status status="PASS" starttime="20220321 17:19:12.784" endtime="20220321 17:19:12.839"/>
+</kw>
+<kw name="Fechar o navegador" library="hooks" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220321 17:19:12.840" endtime="20220321 17:19:15.199"/>
+</kw>
+<status status="PASS" starttime="20220321 17:19:12.840" endtime="20220321 17:19:15.200"/>
+</kw>
+<status status="PASS" starttime="20220321 17:18:55.593" endtime="20220321 17:19:15.200"/>
+</test>
+<status status="PASS" starttime="20220321 17:18:54.428" endtime="20220321 17:19:15.203"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Cenarios Movermouse">Cenarios Movermouse</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
